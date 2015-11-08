@@ -131,7 +131,7 @@ Search is a link.
 Checkout is a link.
 
 Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
-Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
+Every operation  must have-possible-status  a thing. 
 
 Addproduct is a create-resource-operation.
 Updateproduct is a replace-resource-operation.
@@ -163,7 +163,12 @@ Comment:Every search returns products and status 203.
 Comment:Every Checkout needs a user and the user’s address and the user payment way, then it goes to Payment and status 200.
 
 
+Comment: I should make reference to schema.org/activity
+Affordance is an activity.
+
+
 Comment: TODO - PAYMENT
+Comment: Those operations a deepgraphs operation and can run on parallel and have also a duration timestamp
 Comment:When a payment happens, If payment is valid, then it returns a receipt and returns status 200.
 Comment: When a payment happens, send an email notification with sendgrid
 Comment: When a payment happens, send to the postage company the details - postary.
