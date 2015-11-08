@@ -130,14 +130,31 @@ Product is a link.
 Search is a link.
 Checkout is a link.
 
+Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
+Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
+
 Addproduct is a create-resource-operation.
 Updateproduct is a replace-resource-operation.
 Deleteproduct is a delete-resource-operation.
+
+Addproduct has-method post and has-possible-status 201.
+Updateproduct has-method put and has-possible-status 203.
 
 
 Basket has-operation Addproduct and has-operation Updateproduct and has-operation Deleteproduct.
 
 
+Third-Party-Service is a resource.
+Twilio is a third-party-service.
+Pubnub is a third-party-service.
+Facebook is a third-party-service.
+Instagram is a third-party-service.
+Twitter is a third-party-service.
+Paypal is a third-party-service.
+Postary is a third-party-service.
+Sendgrid is a third-party-service.
+
+Every-single-thing that is a third-party-service has-api-documentation api-documentation.
 
 Comment:Every Basket can-contain many products.
 Comment:Every Basket needs at least one product, before Checkout can be valid for evaluation.
@@ -149,7 +166,7 @@ Comment:Every Checkout needs a user and the user’s address and the user paymen
 Comment: TODO - PAYMENT
 Comment:When a payment happens, If payment is valid, then it returns a receipt and returns status 200.
 Comment: When a payment happens, send an email notification with sendgrid
-Comment: When a payment happens, send to the postage company the details
+Comment: When a payment happens, send to the postage company the details - postary.
 Comment: When a payment happens, send to the user an in-app notification through the pubnub channel of notifications
 Comment: When a payment happens, send share the update on the user s twitter feed
 Comment: When a payment happens, send share the update on the user s facebook feed
