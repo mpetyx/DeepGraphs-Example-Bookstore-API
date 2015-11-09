@@ -124,18 +124,17 @@ Product is a link.
 Search is a link.
 Checkout is a link.
 
-Every operation has-method either Delete, Get, Post or Put. 
+Every operation has-method either Delete or Get or Post or Put. 
 Every operation has-possible-status. 
 
-Addproduct is a create-resource-operation.
-Updateproduct is a replace-resource-operation.
-Deleteproduct is a delete-resource-operation.
+Add-Product  is a create-resource-operation.
+Update-Product  is a replace-resource-operation.
+Delete-Product is a delete-resource-operation.
 
-Comment: Addproduct has-method Post and has-possible-status '201'.
-Comment: Updateproduct has-method Put and has-possible-status '203'.
+Add-Product has-method Post and has-value equal-to 201.
+Update-Product has-method Put and has-value equal-to 201 .
 
-
-Basket has-operation Addproduct and has-operation Deleteproduct and has-operation Updateproduct.
+Basket has-operation add-product and has-operation Deleteproduct and has-operation Update-Product.
 
 
 Third-Party-Service is a resource.
@@ -158,21 +157,22 @@ Comment:Every search returns products and status 203.
 Comment:Every Checkout needs a user and the user’s address and the user payment way, then it goes to Payment and status 200.
 
 
-Comment: I should make reference to schemaorg/activity
-Affordance is an activity.
+Comment: I should make reference to schemaorg/activity.
+Affordance is an activity .
+Checkout is an Affordance.
 
 
-Comment: TODO - PAYMENT
-Comment: Those operations a deepgraphs operation and can run on parallel and have also a duration timestamp
+If Checkout has-value equal-to 1 and  Basket has-member then Checkout has-value equal-to 0 and Payment has-value equal-to 1.
+
+Comment: Those operations a deepgraphs operation and can run on parallel and have also a duration timestamp.
 Comment:When a payment happens, If payment is valid, then it returns a receipt and returns status 200.
-Comment: When a payment happens, send an email notification with sendgrid
+Comment: When a payment happens, send an email notification with sendgrid.
 Comment: When a payment happens, send to the postage company the details - postary.
-Comment: When a payment happens, send to the user an in-app notification through the pubnub channel of notifications
-Comment: When a payment happens, send share the update on the user s twitter feed
-Comment: When a payment happens, send share the update on the user s facebook feed
-Comment: When a payment happens, send share the update on the user s instagram feed
-Comment: When a payment happens, send an sms notification with twilio
-////
+Comment: When a payment happens, send to the user an in-app notification through the pubnub channel of notifications.
+Comment: When a payment happens, send share the update on the user s twitter feed.
+Comment: When a payment happens, send share the update on the user s facebook feed.
+Comment: When a payment happens, send share the update on the user s instagram feed.
+Comment: 'When a payment happens, send an sms notification with twilio'.
 
 References:
  [cc] 'http://creativecommons.org/ns#'
@@ -181,3 +181,4 @@ References:
  [ns1] 'http://www.w3.org/2003/06/sw-vocab-status/ns#'
  [schema] 'https://schema.org/' ('https://schema.org/docs/schemaorg.owl')
 .
+
