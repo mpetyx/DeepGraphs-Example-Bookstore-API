@@ -117,31 +117,25 @@ Every-single-thing that is-previous is a resource.
 Every-single-thing that has-mapping is an iri-template.
 Every-single-thing that has-variable (some value) is an iri-template-mapping.
 
-Customer-1 is a customer.
-Customer-1 has-priority Critical.
-
-Customer-2 is a customer.
-Customer-2 has-priority Critical.
-
-Bookstoreapi is a api-documentation and has-entrypoint Entry.
+Bookstoreapi is an api-documentation and has-entrypoint Entry.
 Entry is a link.
 Basket is a link.
 Product is a link.
 Search is a link.
 Checkout is a link.
 
-Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
-Every operation  must have-possible-status  a thing. 
+Every operation has-method either Delete, Get, Post or Put. 
+Every operation has-possible-status. 
 
 Addproduct is a create-resource-operation.
 Updateproduct is a replace-resource-operation.
 Deleteproduct is a delete-resource-operation.
 
-Addproduct has-method post and has-possible-status 201.
-Updateproduct has-method put and has-possible-status 203.
+Comment: Addproduct has-method Post and has-possible-status '201'.
+Comment: Updateproduct has-method Put and has-possible-status '203'.
 
 
-Basket has-operation Addproduct and has-operation Updateproduct and has-operation Deleteproduct.
+Basket has-operation Addproduct and has-operation Deleteproduct and has-operation Updateproduct.
 
 
 Third-Party-Service is a resource.
@@ -154,8 +148,9 @@ Paypal is a third-party-service.
 Postary is a third-party-service.
 Sendgrid is a third-party-service.
 
-Every-single-thing that is a third-party-service has-api-documentation api-documentation.
+Every third-party-service has-api-documentation a thing that is an api-documentation.
 
+Comment: Integrity Constraints go here
 Comment:Every Basket can-contain many products.
 Comment:Every Basket needs at least one product, before Checkout can be valid for evaluation.
 Comment:If Checkout is been asked and Basket contains no product, then return status 403.
@@ -163,7 +158,7 @@ Comment:Every search returns products and status 203.
 Comment:Every Checkout needs a user and the user’s address and the user payment way, then it goes to Payment and status 200.
 
 
-Comment: I should make reference to schema.org/activity
+Comment: I should make reference to schemaorg/activity
 Affordance is an activity.
 
 
@@ -177,6 +172,7 @@ Comment: When a payment happens, send share the update on the user s twitter fee
 Comment: When a payment happens, send share the update on the user s facebook feed
 Comment: When a payment happens, send share the update on the user s instagram feed
 Comment: When a payment happens, send an sms notification with twilio
+////
 
 References:
  [cc] 'http://creativecommons.org/ns#'
@@ -185,4 +181,3 @@ References:
  [ns1] 'http://www.w3.org/2003/06/sw-vocab-status/ns#'
  [schema] 'https://schema.org/' ('https://schema.org/docs/schemaorg.owl')
 .
-
