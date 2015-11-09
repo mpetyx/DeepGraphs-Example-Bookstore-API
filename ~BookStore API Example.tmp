@@ -123,15 +123,15 @@ Customer-1 has-priority Critical.
 Customer-2 is a customer.
 Customer-2 has-priority Critical.
 
-Bookstoreapi is a api-documentation and has-entrypoint Entry.
+Bookstoreapi is an api-documentation and has-entrypoint Entry.
 Entry is a link.
 Basket is a link.
 Product is a link.
 Search is a link.
 Checkout is a link.
 
-Every operation  must have-method  a thing that is either Put or Post or Get or Delete. 
-Every operation  must have-possible-status  a thing. 
+Every operation must have-method either Put, Post, Get or Delete. 
+Every operation must have-possible-status. 
 
 Addproduct is a create-resource-operation.
 Updateproduct is a replace-resource-operation.
@@ -154,7 +154,7 @@ Paypal is a third-party-service.
 Postary is a third-party-service.
 Sendgrid is a third-party-service.
 
-Every-single-thing that is a third-party-service has-api-documentation api-documentation.
+Every third-party-service has-api-documentation an api-documentation.
 
 Comment:Every Basket can-contain many products.
 Comment:Every Basket needs at least one product, before Checkout can be valid for evaluation.
@@ -185,4 +185,3 @@ References:
  [ns1] 'http://www.w3.org/2003/06/sw-vocab-status/ns#'
  [schema] 'https://schema.org/' ('https://schema.org/docs/schemaorg.owl')
 .
-
